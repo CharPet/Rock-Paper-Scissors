@@ -5,18 +5,28 @@ function getComputerChoice()
     return choices[randomIndex];
 } 
 
-const randomChoice = getComputerChoice();
-// console.log(randomChoice);
+const computerChoice = getComputerChoice();
+// console.log(computerChoice);
 
-function aRound()
+
+function getPlayerChoice()
 {
-    let playerSelection = prompt("Make a choice:", "Rock, Paper, Scissors");
+    const playerSelection = prompt("Make a choice:", "Rock, Paper or Scissors");
     if (playerSelection !== null)
     {
-        return playerSelection.toLowerCase();
+        let playerSelectionConverted =  playerSelection.toLowerCase();
+        // console.log(playerSelectionConverted);
+        return playerSelectionConverted;
     }
-
 }
 
-const playerChoice = aRound();
-console.log(playerChoice);
+const playerChoice = getPlayerChoice();
+// console.log(playerChoice);
+
+
+// function aRound(cs, ps)
+// {
+//     if (computerChoice === playerChoice)
+
+// }
+
