@@ -1,7 +1,11 @@
+let playerCounter = 0;
+let computerCounter = 0;
+
 function getComputerChoice()
 {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
+    console.log("C:" + choices[randomIndex]);
     return choices[randomIndex];
 } 
 
@@ -11,7 +15,7 @@ function getPlayerChoice()
     if (playerChoice !== null)
     {
         let playerChoiceConverted = playerChoice.toLowerCase();
-        // console.log(playerChoiceConverted);
+        console.log("P:" + playerChoiceConverted);
         return playerChoiceConverted;
     }
 }
@@ -57,42 +61,43 @@ function playRound(playerSelection, computerSelection)
         }
                 
     }
-
 }
 
-
-console.log(playRound(playerSelection, computerSelection));
-const playerSelection = getPlayerChoice();
-console.log(playerSelection);
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
 
 function game()
 {
-    let playerCounter = 0;
-    let computerCounter = 0;
-
     for (let i = 0; i < 5; i++)
-    {      
+    {    
+        getComputerChoice(); 
+        getPlayerChoice(); 
         playRound(playerSelection, computerSelection);
-         
     }
 }
+ 
 
 
+const playerSelection = getPlayerChoice();
+console.log("P:" + playerSelection);
+const computerSelection = getComputerChoice();
+console.log("C:" + computerSelection);
+//playRound(playerSelection, computerSelection);
+console.log(playRound(playerSelection, computerSelection));
+game();
+console.log(playerCounter + "and " + computerCounter);
 
-    if (playerCounter > computerCounter)
-    {
-        console.log("Te player wins!");
-    }
-    else if (playerCounter < computerCounter)
-    {
-        console.log("Te computer wins!");
-    }
-    else
-    {
-        console.log("It's a tie!");
-    }
+
+if (playerCounter > computerCounter)
+{
+    console.log(`The player wins ${playerCounter}:${computerCounter}!`);
+}
+else if (playerCounter < computerCounter)
+{
+     console.log(`The computer wins ${computerCounter}:${playerCounter}!`);
+}
+ else
+{
+    console.log("It's a tie!");
+}
 
 
 
