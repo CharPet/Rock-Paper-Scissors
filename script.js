@@ -67,23 +67,27 @@ function playRound(playerSelection, computerSelection)
 function game()
 {
     for (let i = 0; i < 5; i++)
-    {    
-        getComputerChoice(); 
-        getPlayerChoice(); 
+    {   
+        const playerSelection = getPlayerChoice();
+        if (!playerSelection) 
+        {
+          console.log("Game canceled by the player.");
+          return;  
+        }
+        const computerSelection = getComputerChoice();
+
         playRound(playerSelection, computerSelection);
     }
 }
  
-
-
-const playerSelection = getPlayerChoice();
-console.log("P:" + playerSelection);
-const computerSelection = getComputerChoice();
-console.log("C:" + computerSelection);
+//console.log("P:" + playerSelection);
+//console.log("C:" + computerSelection);
 //playRound(playerSelection, computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//console.log(playRound(playerSelection, computerSelection));
+
+
 game();
-console.log(playerCounter + "and " + computerCounter);
+//console.log(playerCounter + " and " + computerCounter);
 
 
 if (playerCounter > computerCounter)
