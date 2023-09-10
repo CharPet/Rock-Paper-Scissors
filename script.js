@@ -56,7 +56,7 @@ function game(playerSelection) {
   displayScore();
 }
 
-// Attach event listeners to the buttons
+
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
